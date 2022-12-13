@@ -1,7 +1,10 @@
 import type { NextPage } from 'next'
-import { useEffect, useState } from 'react'
-import { AssetLoader } from '../utils/loader';
-import { MotionBox } from '../components/motion';
+import { FC, useEffect, useRef, useState } from 'react'
+import { AssetLoader } from '@utils/loader';
+import { MotionBox, MotionImage } from '@components/motion';
+import styles from '@styles/Home.module.scss'
+import { joinClasses, joinModuleClasses } from "@utils/common";
+import { Forceful } from "@utils/anims";
 
 interface ImageEntry {
     date: string;
@@ -13,9 +16,10 @@ interface ImageEntry {
 }
 
 const Home: NextPage = () => {
-    const [images, setImages] = useState<string[]>([]);
+    const [images, setImages] = useState<Record<string, string>>({});
     const [imageEntries, setImageEntries] = useState<Record<string, ImageEntry>>({});
     const [progress, setProgress] = useState(0);
+    const [currentImage, setCurrentImage] = useState<string>();
     const dependencies = [
         ...[
             'images/22466-22467anaVantuyne900.jpg',
@@ -55,20 +59,83 @@ const Home: NextPage = () => {
         });
         loader.onProgressUpdate = setProgress;
         loader.await().then(downloaded => {
-            for (const item of downloaded) {
-                if (item.metadata.mimeType === 'image/jpeg') {
-                    setImages(images => [...images, URL.createObjectURL(new Blob([item.resolved as ArrayBuffer], { type: 'image/jpeg' }))]);
+            for (const { metadata: { mimeType }, url, resolved } of downloaded) {
+                if (mimeType === 'image/jpeg') {
+                    setImages(images => ({
+                        ...images,
+                        [url.split('/').pop()!]: URL.createObjectURL(new Blob([resolved as ArrayBuffer], { type: 'image/jpeg' }))
+                    }));
                 }
-                if (item.metadata.mimeType === 'application/json') {
-                    setImageEntries((imageEntries) => ({ ...imageEntries, ...item.resolved as Record<string, ImageEntry> }));
+                if (mimeType === 'application/json') {
+                    setImageEntries((imageEntries) => ({ ...imageEntries, ...resolved as Record<string, ImageEntry> }));
                 }
             }
         })
     }, []);
-    return <MotionBox h={"100vh"} w={"100vw"} bg="red">
-        {}
+    return <MotionBox
+        h={"100vh"}
+        w={"100vw"}
+        className={"overflow-hidden"}
+    >
+        { progress === 1 &&
+            <MotionBox
+                layout
+                className={joinClasses(
+                    "fw fh",
+                    "overflow-auto-x",
+                    joinModuleClasses(styles)("container"),
+                )}
+            >
+                {Object
+                    .entries(imageEntries)
+                    .map(([key, entry]) =>
+                        <GridImage
+                            src={images[key]}
+                            image={entry}
+                            imageClickCB={() => setCurrentImage(key)}
+                            key={`grid-image-${key}`}
+                            active={currentImage === key}
+                        />
+                )}
+            </MotionBox>
+        }
     </MotionBox>
+}
 
+interface GridImageProps {
+    src: string;
+    image: ImageEntry;
+    imageClickCB?: (image: ImageEntry) => void;
+    active?: boolean;
+}
+const GridImage: FC<GridImageProps> = ({ active, src, image, imageClickCB }) => {
+    const transition = {
+        ease: Forceful,
+        duration: 0.7,
+    }
+    const ref = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const img = ref.current as HTMLImageElement;
+        const { naturalWidth, naturalHeight } = img;
+        const [spanX, spanY] = [naturalWidth, naturalHeight].map(v => Math.ceil(v / Math.min(naturalWidth, naturalHeight)));
+    }, []);
+    return <MotionBox
+            className={joinModuleClasses(styles)("grid-image-container")}
+            layout
+            onClick={() => imageClickCB?.(image)}
+        >
+        <MotionImage
+            src={src}
+            ref={ref}
+            initial={{ gridColumn: "span 2" }}
+            animate={{
+                gridColumn: active ? "span 1" : "span 2",
+            }}
+            transition={transition}
+            layout
+            className={joinModuleClasses(styles)("image")}
+        />
+    </MotionBox>
 }
 
 export default Home

@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.4.3",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "framer-motion": "^7.6.19",
     "jotai": "^1.11.1",
     "next": "13.0.6",
