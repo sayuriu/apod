@@ -83,6 +83,13 @@
         "title": "The Light, the Dark, and the Dusty",
         "url": "https://apod.nasa.gov/apod/image/2211/Cave_Copyright_APOD1024.png"
     },
+    "iotruecolor_galileo_960.jpg": {
+        "date": "2022-12-11",
+        "explanation": "The strangest moon in the Solar System is bright yellow.  The featured picture, an attempt to show how Io would appear in the \"true colors\" perceptible to the average human eye, was taken in 1999 July by the Galileo spacecraft that orbited Jupiter from 1995 to 2003.  Io's colors derive from sulfur and molten silicate rock.  The unusual surface of Io is kept very young by its system of active volcanoes.  The intense tidal gravity of Jupiter stretches Io and damps wobbles caused by Jupiter's other Galilean moons.  The resulting friction greatly heats Io's interior, causing  molten rock to explode through the surface.  Io's volcanoes are so active that they are effectively turning the whole moon inside out.  Some of Io's volcanic lava is so hot it glows in the dark.   Artemis 1 Coverage: Orion return and splashdown",
+        "hdurl": "https://apod.nasa.gov/apod/image/2212/iotruecolor_galileo_2796.jpg",
+        "title": "Io in True Color",
+        "url": "https://apod.nasa.gov/apod/image/2212/iotruecolor_galileo_960.jpg"
+    },
     "art001e000672-orig1024c.jpg": {
         "date": "2022-12-01",
         "explanation": "On flight day 13 (November 28) of the Artemis 1 mission the Orion spacecraft reached its maximum distance from Earth. In fact, over 430,000 kilometers from Earth its distant retrograde orbit also put Orion nearly 70,000 kilometers from the Moon. In the same field of view in this video frame from flight day 13, planet and large natural satellite even appear about the same apparent size from the uncrewed spacecraft's perspective. Today (December 1) should see Orion depart its distant retrograde orbit. En route to planet Earth it will head toward a second powered fly by of the Moon. Splashdown on the home world is expected on December 11.",
@@ -135,6 +142,16 @@
         "title": "Orion and the Ocean of Storms",
         "url": "https://apod.nasa.gov/apod/image/2212/art001e002132_apod1024.jpg"
     },
+    "M16Eagle_Akar_960_starless.jpg": {
+        "copyright": "Yannick Akar",
+        "date": "2022-10-04",
+        "explanation": "The whole thing looks like an eagle.  A closer look at the Eagle Nebula's center, however, shows the bright region is actually a window into the center of a larger dark shell of dust.  Through this window, a brightly-lit workshop appears where a whole open cluster of stars is being formed.  In this cavity tall pillars and round globules of dark dust and cold molecular gas remain where stars are still forming.  Paradoxically, it is perhaps easier to appreciate this impressive factory of star formation by seeing it without its stars -- which have been digitally removed in the featured image. The Eagle emission nebula, tagged M16, lies about 6500 light years away, spans about 20 light-years, and is visible with binoculars toward the constellation of the Serpent (Serpens).  Creating this picture involved over 22 hours of imaging and combining colors emitted specifically by hydrogen (red), and oxygen (blue).",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/M16Eagle_Akar_3365_starless.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Star-Forming Eagle Nebula without Stars",
+        "url": "https://apod.nasa.gov/apod/image/2210/M16Eagle_Akar_960_starless.jpg"
+    },
     "Mars_Moon_fullsize_TGlenn1024.jpg": {
         "copyright": "Tom Glenn",
         "date": "2022-12-09",
@@ -150,11 +167,184 @@
         "title": "America and the Sea of Serenity",
         "url": "https://apod.nasa.gov/apod/image/2212/22466-22467anaVantuyne900.jpg"
     },
-    "iotruecolor_galileo_960.jpg": {
-        "date": "2022-12-11",
-        "explanation": "The strangest moon in the Solar System is bright yellow.  The featured picture, an attempt to show how Io would appear in the \"true colors\" perceptible to the average human eye, was taken in 1999 July by the Galileo spacecraft that orbited Jupiter from 1995 to 2003.  Io's colors derive from sulfur and molten silicate rock.  The unusual surface of Io is kept very young by its system of active volcanoes.  The intense tidal gravity of Jupiter stretches Io and damps wobbles caused by Jupiter's other Galilean moons.  The resulting friction greatly heats Io's interior, causing  molten rock to explode through the surface.  Io's volcanoes are so active that they are effectively turning the whole moon inside out.  Some of Io's volcanic lava is so hot it glows in the dark.   Artemis 1 Coverage: Orion return and splashdown",
-        "hdurl": "https://apod.nasa.gov/apod/image/2212/iotruecolor_galileo_2796.jpg",
-        "title": "Io in True Color",
-        "url": "https://apod.nasa.gov/apod/image/2212/iotruecolor_galileo_960.jpg"
+    "AS17-137-20979.jpg": {
+        "date": "2022-12-14",
+        "explanation": "Why is the Moon so dusty? On Earth, rocks are weathered by wind and water, creating soil and sand. On the Moon, the history of constant micrometeorite bombardment has blasted away at the rocky surface creating a layer of powdery lunar soil or regolith.  For the Apollo astronauts and their equipment, the pervasive, fine, gritty dust was definitely a problem",
+        "hdurl": "https://apod.nasa.gov/apod/image/2212/AS17-137-20979.jpg",
+        "title": "Lunar Dust and Duct Tape",
+        "url": "https://apod.nasa.gov/apod/image/2212/AS17-137-20979_1024.jpg"
+    },
+    "Lu20220729-0826_1050.jpg": {
+        "copyright": "Tunc Tezel",
+        "date": "2022-10-01",
+        "explanation": "Observe the Moon every night and you'll see its visible sunlit portion gradually change. In phases progressing from New Moon to Full Moon to New Moon again, a lunar cycle or lunation is completed in about 29.5 days. Top left to bottom right, this 7x4 matrix of telescopic images captures the range of lunar phases for 28 consecutive nights, from the evening of July 29 to the morning of August 26, following an almost complete lunation. No image was taken 24 hours or so just after and just before New Moon, when the lunar phase is at best a narrow crescent, close to the Sun and really hard to see. Finding mostly clear Mediterranean skies required an occasional road trip to complete this lunar cycle project, imaging in early evening for the first half and late evening and early morning for the second half of the lunation. Since all the images are registered at the same scale you can use this matrix to track the change in the Moon's apparent size during the single lunation. For extra credit, find the lunar phase that occurred closest to perigee.  Tonight: International Observe the Moon Night",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/Lu20220729-0826.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Lunation Matrix",
+        "url": "https://apod.nasa.gov/apod/image/2210/Lu20220729-0826_1050.jpg"
+    },
+    "CannonSupernova_English_960.jpg": {
+        "date": "2022-10-02",
+        "explanation": "What could shoot out a neutron star like a cannon ball? A supernova.  About 10,000 years ago, the supernova that created the nebular remnant CTB 1 not only destroyed a massive star but blasted its newly formed neutron star core -- a pulsar -- out into the Milky Way Galaxy.  The pulsar, spinning 8.7 times a second, was discovered using downloadable software Einstein@Home searching through data taken by NASA's orbiting Fermi Gamma-Ray Observatory.  Traveling over 1,000 kilometers per second, the pulsar PSR J0002+6216 (J0002 for short) has already left the supernova remnant CTB 1, and is even fast enough to leave our Galaxy. Pictured, the trail of the pulsar is visible extending to the lower left of the supernova remnant.  The featured image is a combination of radio images from the VLA and DRAO radio observatories, as well as data archived from NASA's orbiting IRAS infrared observatory. It is well known that supernovas can act as cannons, and even that pulsars can act as cannonballs -- what is not known is how supernovas do it.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/CannonSupernova_English_8404.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Supernova Cannon Expels Pulsar J0002",
+        "url": "https://apod.nasa.gov/apod/image/2210/CannonSupernova_English_960.jpg"
+    },
+    "Europa_JunoLuck_1080.jpg": {
+        "date": "2022-10-03",
+        "explanation": "What mysteries might be solved by peering into this crystal ball?  In this case, the ball is actually a moon of Jupiter, the crystals are ice, and the moon is not only dirty but cracked beyond repair.  Nevertheless, speculation is rampant that oceans exist under Europa's fractured ice-plains that could support life.  Europa, roughly the size of Earth's Moon, is pictured here in an image taken a few days ago when the Jupiter-orbiting robotic spacecraft Juno passed within 325 kilometers of its streaked and shifting surface. Underground oceans are thought likely because Europa undergoes global flexing due to its changing gravitational attraction with Jupiter during its slightly elliptical orbit, and this flexing heats the interior. Studying Juno's close-up images may further humanity's understanding not only of Europa and the early Solar System but also of the possibility that life exists elsewhere in the universe.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/Europa_JunoLuck_2611.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Jupiter's Europa from Spacecraft Juno",
+        "url": "https://apod.nasa.gov/apod/image/2210/Europa_JunoLuck_1080.jpg"
+    },
+    "ngc4631_sherick1024.jpg": {
+        "copyright": "Michael Sherick",
+        "date": "2022-10-06",
+        "explanation": "NGC 4631 is a big beautiful spiral galaxy. Seen edge-on, it lies only 25 million light-years away in the well-trained northern constellation Canes Venatici. The galaxy's slightly distorted wedge shape suggests to some a cosmic herring and to others its popular moniker, The Whale Galaxy. Either way, it is similar in size to our own Milky Way. In this sharp color image, the galaxy's yellowish core, dark dust clouds, bright blue star clusters, and red star forming regions are easy to spot. A companion galaxy, the small elliptical NGC 4627 is just above the Whale Galaxy. Faint star streams seen in deep images are the remnants of small companion galaxies disrupted by repeated encounters with the Whale in the distant past. The Whale Galaxy is also known to have spouted a halo of hot gas glowing in X-rays.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/ngc4631_sherick.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "NGC 4631: The Whale Galaxy",
+        "url": "https://apod.nasa.gov/apod/image/2210/ngc4631_sherick1024.jpg"
+    },
+    "JovianEclipse1024c.jpg": {
+        "copyright": "Andrew McCarthy",
+        "date": "2022-10-07",
+        "explanation": "At opposition, opposite the Sun in Earth's sky, late last month Jupiter is also approaching perihelion, the closest point to the Sun in its elliptical orbit, early next year. That makes Jupiter exceptionally close to our fair planet, currently resulting in excellent views of the Solar System's ruling gas giant. On September 27, this sharp image of Jupiter was recorded with a small telescope from a backyard in Florence, Arizona. The stacked video frames reveal the massive world bounded by planet girdling winds. Dark belts and light zones span the gas giant, along with rotating oval storms and its signature Great Red Spot. Galilean moon Ganymede is below and right in the frame. The Solar System's largest moon and its shadow are in transit across the southern Jovian cloud tops.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/JovianEclipse.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "In Ganymede's Shadow",
+        "url": "https://apod.nasa.gov/apod/image/2210/JovianEclipse1024c.jpg"
+    },
+    "2017K2_2022-09-21_web.jpg": {
+        "copyright": "Jose J. Chambo",
+        "date": "2022-10-08",
+        "explanation": "Heading for its closest approach to the Sun or perihelion on December 20, comet C/2017 K2 (PanSTARRS) remains a sight for telescopic observers as it sweeps through planet Earth's southern hemisphere skies.  First time visitor from the remote Oort cloud this comet PanSTARRS sports a greenish coma and whitish dust tail about half a degree long at the upper left in a deep image from September 21. It also shares the starry field of view toward the constellation Scorpius with another comet, 73P/Schwassmann-Wachmann 3, seen about 1 degree below and right of PanSTARRS. Astronomers estimate that first time visitor comet C/2017 K2 (PanSTARRS) has been inbound from the Oort cloud for some 3 million years along a hyperbolic orbit. Schwassmann-Wachmann 3 is more familiar though.  The periodic comet loops through its own elliptical orbit, from just beyond the orbit of Jupiter to the vicinity of Earth's orbit, once every 5.4 years. Just passing in the night, this comet PanSTARRS is about 20 light-minutes from Earth in the September 21 image. Seen to be disintegrating since 1995, Schwassmann-Wachmann 3 was about 7.8 light-minutes away.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/2017K2_2022-09-21_media.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Two Comets in Southern Skies",
+        "url": "https://apod.nasa.gov/apod/image/2210/2017K2_2022-09-21_web.jpg"
+    },
+    "aurora_kwon_960.jpg": {
+        "copyright": "Kwon, O ChulTWAN",
+        "date": "2022-10-09",
+        "explanation": "Gusting solar winds and blasts of charged particles from the Sun resulted in several rewarding nights of auroras back in 2014 December, near the peak of the last 11-year solar cycle.  The featured image captured dramatic auroras stretching across a sky near the town of Yellowknife in northern Canada.  The auroras were so bright that they not only inspired awe, but were easily visible on an image exposure of only 1.3 seconds. A video taken concurrently shows the dancing sky lights evolving in real time as tourists, many there just to see auroras, respond with cheers. The conical dwellings on the image right are tipis, while far in the background, near the image center, is the constellation of Orion.  Auroras may increase again over the next few years as our Sun again approaches solar maximum.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/aurora_kwon_1500.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Auroras over Northern Canada",
+        "url": "https://apod.nasa.gov/apod/image/2210/aurora_kwon_960.jpg"
+    },
+    "LunarAnalemma_Turksoy_1080.jpg": {
+        "copyright": "Betul Turksoy",
+        "date": "2022-10-10",
+        "explanation": "An analemma is that figure-8 curve you get when you mark the position of the Sun at the same time each day for one year. But the trick to imaging an analemma of the Moon is to wait bit longer. On average the Moon returns to the same position in the sky about 50 minutes and 29 seconds later each day. So photograph the Moon 50 minutes 29 seconds later on successive days. Over one lunation or lunar month it will trace out an analemma-like curve as the Moon's actual position wanders due to its tilted and elliptical orbit. Since the featured image was taken over two months, it actually shows a double lunar analemma.  Crescent lunar phases too thin and faint to capture around the New moon are missing. The two months the persistent astrophotographer chose were during a good stretch of weather during July and August, and the location was Kayseri, Turkey",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/LunarAnalemma_Turksoy_6755.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "A Double Lunar Analemma over Turkey",
+        "url": "https://apod.nasa.gov/apod/image/2210/LunarAnalemma_Turksoy_1080.jpg"
+    },
+    "Pelican_Almeida_960.jpg": {
+        "copyright": "Adriano Almeida",
+        "date": "2022-10-11",
+        "explanation": "What dark structures arise within the Pelican Nebula? On the whole, the nebula appears like a bird (a pelican) and is seen toward the constellation of a different bird: Cygnus, a Swan. But inside, the Pelican Nebula is a place lit up by new stars and befouled by dark dust. Smoke-sized dust grains start as simple carbon compounds formed in the cool atmospheres of young stars but are dispersed by stellar winds and explosions.  Two impressive Herbig-Haro jets are seen emitted by the star HH 555 on the right, and these jets are helping to destroy the light year-long dust pillar that contains it.  Other pillars and jets are also visible. The featured image was scientifically-colored to emphasize light emitted by small amounts of heavy elements in a nebula made predominantly of the light elements hydrogen and helium.  The Pelican Nebula (IC 5067 and IC 5070) is about 2,000 light-years away and can be found with a small telescope to the northeast of the bright star Deneb.    Explore Your Universe: Random APOD Generator",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/Pelican_Almeida_2000.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Stars, Dust, Pillars, and Jets in the Pelican Nebula",
+        "url": "https://apod.nasa.gov/apod/image/2210/Pelican_Almeida_960.jpg"
+    },
+    "SquidFinal3smaller1024.jpg": {
+        "copyright": "Tommy Lease",
+        "date": "2022-10-12",
+        "explanation": "A mysterious squid-like cosmic cloud, this nebula is very faint, but also very large in planet Earth's sky. In the image, composed with 30 hours of narrowband image data, it spans nearly three full moons toward the royal constellation Cepheus. Discovered in 2011 by French astro-imager Nicolas Outters, the Squid Nebula's bipolar shape is distinguished here by the telltale blue-green emission from doubly ionized oxygen atoms. Though apparently surrounded by the reddish hydrogen emission region Sh2-129, the true distance and nature of the Squid Nebula have been difficult to determine. Still, a more recent investigation suggests Ou4 really does lie within Sh2-129 some 2,300 light-years away. Consistent with that scenario, the cosmic squid would represent a spectacular outflow of material driven by a triple system of hot, massive stars, cataloged as HR8119, seen near the center of the nebula. If so, this truly giant squid nebula would physically be over 50 light-years across.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/SquidFinal3smaller.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Ou4: The Giant Squid Nebula",
+        "url": "https://apod.nasa.gov/apod/image/2210/SquidFinal3smaller1024.jpg"
+    },
+    "GalaxyFlower_Strand_960.jpg": {
+        "copyright": "Göran Strand",
+        "date": "2022-10-18",
+        "explanation": "Could the stem of our Milky Way bloom into an auroral flower? No, not really, even though it may appear that way in today’s featured all-sky image.  On the left, the central plane of our home galaxy extends from the horizon past the middle of the sky. On the right, an auroral oval also extends from the sky's center -- but is dominated by bright green-glowing oxygen. The two are not physically connected, because the aurora is relatively nearby, with the higher red parts occurring in Earth's atmosphere only about 1000 kilometers high. In contrast, an average distance to the stars and nebulas we see in the Milky Way more like 1000 light-years away - 10 trillion times further.  The featured image composite was taken in early October across a small lake in Abisko, northern Sweden. As our Sun's magnetic field evolves into the active part of its 11-year cycle, auroras near both of Earth's poles are sure to become more frequent.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/GalaxyFlower_Strand_1200.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Milky Way Auroral Flower",
+        "url": "https://apod.nasa.gov/apod/image/2210/GalaxyFlower_Strand_960.jpg"
+    },
+    "Ngc7497Cirrus_Trottier_960.jpg": {
+        "copyright": "Howard TrottierEmily Rice",
+        "date": "2022-10-19",
+        "explanation": "Do we dare believe our eyes?  When we look at images of space, we often wonder whether they are \"real\", and just as often the best answer varies.  In this case, the scene appears much as our eyes would see it, because it was obtained using  RGB (Red, Green, Blue) filters like the cone cells in our eyes, except collecting light for 19 hours, not a fraction of a second.  The featured image was captured over six nights, using a 24-inch diameter telescope in the Sierra Nevada Mountains, in California, USA. The bright spiral galaxy at the center (NGC 7497) looks like it is being grasped by an eerie tendril of a space ghost, and therein lies the trick. The galaxy is actually 59 million light years away, while the nebulosity is MBM 54, less than one thousand light years away, making it one of the nearest cool clouds of gas and dust -- galactic cirrus -- within our own Milky Way Galaxy.  Both are in the constellation of Pegasus, which can be seen high overhead from northern latitudes in the autumn.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/Ngc7497Cirrus_Trottier_2976.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "A Galaxy Beyond Stars, Gas, Dust",
+        "url": "https://apod.nasa.gov/apod/image/2210/Ngc7497Cirrus_Trottier_960.jpg"
+    },
+    "GrbRings_SwiftMiller_960.jpg": {
+        "date": "2022-10-17",
+        "explanation": "Why would x-ray rings appear around a gamma-ray burst?  The surprising answer has little to do with the explosion itself but rather with light reflected off areas of dust-laden gas in our own Milky Way Galaxy.  GRB 221009A was a tremendous explosion -- a very bright gamma-ray burst (GRB) that occurred far across the universe with radiation just arriving in our Solar System last week.  Since GRBs can also emit copious amounts of x-rays, a bright flash of x-rays arrived nearly simultaneously with the gamma-radiation. In this case, the X-rays also bounced off regions high in dust right here in our Milky Way Galaxy, creating the unusual reflections. The greater the angle between reflecting Milky Way dust and the GRB, the greater the radius of the X-ray rings, and, typically, the longer it takes for these light-echoes to arrive.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/GrbRings_SwiftMiller_1458.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "X-Ray Rings Around a Gamma Ray Burst",
+        "url": "https://apod.nasa.gov/apod/image/2210/GrbRings_SwiftMiller_960.jpg"
+    },
+    "WR140_WebbSchmidt_960.jpg": {
+        "date": "2022-10-13",
+        "explanation": "What are those strange rings? Rich in dust, the rings are likely 3D shells -- but how they were created remains a topic of research.  Where they were created is well known: in a binary star system that lies about 6,000 light years away toward the constellation of the Swan (Cygnus) -- a system dominated by the Wolf-Rayet star WR 140.  Wolf-Rayet stars are massive, bright, and known for their tumultuous winds. They are also known for creating and dispersing heavy elements such as carbon  which is a building block of interstellar dust. The other star in the binary is also bright and massive -- but not as active.  The two great stars joust in an oblong orbit as they approach each other about every eight years. When at closest approach, the X-ray emission from the system increases, as, apparently, does the dust expelled into space -- creating another shell.  The featured infrared image by the new Webb Space Telescope resolves greater details and more dust shells than ever before.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2209/WR140_WebbSchmidt_960.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Dust Shells around WR 140 from Webb",
+        "url": "https://apod.nasa.gov/apod/image/2209/WR140_WebbSchmidt_960.jpg"
+    },
+    "stsci-pillarsofcreation1280c.jpg": {
+        "date": "2022-10-20",
+        "explanation": "A now famous picture from the Hubble Space Telescope featured these star forming columns of cold gas and dust light-years long inside M16, the Eagle Nebula, dubbed the Pillars of Creation. This James Webb Space Telescope NIRCam image expands Hubble's exploration of that region in greater detail and depth inside the iconic stellar nursery. Particularly stunning in Webb's near infrared view is the telltale reddish emission from knots of material undergoing gravitational collapse to form stars within the natal clouds. The Eagle Nebula is some 6,500 light-years distant. The larger bright emission nebula is itself an easy target for binoculars or small telescopes. M16 lies along the plane of our Milky Way galaxy in a nebula rich part of the sky, toward the split constellation Serpens Cauda (the tail of the snake).",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/stsci-pillarsofcreation.png",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Pillars of Creation",
+        "url": "https://apod.nasa.gov/apod/image/2210/stsci-pillarsofcreation1280c.jpg"
+    },
+    "NGC1300_HST_1080.jpg": {
+        "date": "2022-10-16",
+        "explanation": "Across the center of this spiral galaxy is a bar.  And at the center of this bar is smaller spiral.  And at the center of that spiral is a supermassive black hole.  This all happens in the big, beautiful, barred spiral galaxy cataloged as NGC 1300, a galaxy that lies some 70 million light-years away toward the constellation of the river Eridanus. This Hubble Space Telescope composite view of the gorgeous island universe is one of the most detailed Hubble images ever made of a complete galaxy.  NGC 1300 spans over 100,000 light-years and the Hubble image reveals striking details of the galaxy's dominant central bar and majestic spiral arms. How the giant bar formed, how it remains, and how it affects star formation remains an active topic of research.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/NGC1300_HST_6637.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Barred Spiral Galaxy NGC 1300",
+        "url": "https://apod.nasa.gov/apod/image/2210/NGC1300_HST_1080.jpg"
+    },
+    "2T2A3056_1024.jpg": {
+        "copyright": "Michael Seeley",
+        "date": "2022-10-14",
+        "explanation": "The Full Moon of October 9th was the second Full Moon after the northern hemisphere autumnal equinox, traditionally called the Hunter's Moon. According to lore, the name is a fitting one because this Full Moon lights the night during a time for hunting in preparation for the coming winter months. In this snapshot, a nearly full Hunter's Moon was captured just after sunset on October 8, rising in skies over Florida's Space Coast. Rising from planet Earth a Falcon 9 rocket pierces the bright lunar disk from the photographer's vantage point. Ripples and fringes along the edge of the lunar disk appear as supersonic shock waves generated by the rocket's passage change the atmosphere's index of refraction.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/2T2A3056.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "The Falcon and the Hunter's Moon",
+        "url": "https://apod.nasa.gov/apod/image/2210/2T2A3056_1024.jpg"
+    },
+    "LAT_221009A_burst_opt_1080.gif": {
+        "date": "2022-10-15",
+        "explanation": "Gamma-ray burst GRB 221009A likely signals the birth of a new black hole, formed at the core of a collapsing star long ago in the distant universe. The extremely powerful blast is depicted in this animated gif constructed using data from the Fermi Gamma Ray Space Telescope. Fermi captured the data at gamma-ray energies, detecting photons with over 100 million electron volts. In comparison visible light photons have energies of about 2 electron volts. A steady, high energy gamma-ray glow from the plane of our Milky Way galaxy runs diagonally through the 20 degree wide frame at the left, while the transient gamma-ray flash from GRB 221009A appears at center and then fades. One of the brightest gamma-ray bursts ever detected GRB 221009A is also close as far as gamma-ray bursts go, but still lies about 2 billion light-years away. In low Earth orbit Fermi’s Large Area Telescope recorded gamma-ray photons from the burst for more than 10 hours as high-energy radiation from GRB 221009A swept over planet Earth last Sunday, October 9.",
+        "hdurl": "https://apod.nasa.gov/apod/image/2210/LAT_221009A_burst_opt_1080.gif",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "GRB 221009A",
+        "url": "https://apod.nasa.gov/apod/image/2210/LAT_221009A_burst_opt_1080.gif"
     }
 }
