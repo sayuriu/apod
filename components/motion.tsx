@@ -6,6 +6,10 @@ import {
     ButtonProps,
     Flex,
     FlexProps,
+    Grid,
+    GridProps,
+    GridItem,
+    GridItemProps,
     Stack,
     VStack,
     HStack,
@@ -23,6 +27,12 @@ export const MotionBox = motion<
 export const MotionFlex = motion<
     Omit<FlexProps, keyof MotionProps> & MotionProps
     >(Flex as any);
+export const MotionGrid = motion<
+    Omit<GridProps, keyof MotionProps> & MotionProps
+    >(Grid as any);
+export const MotionGridItem = motion<
+    Omit<GridItemProps, keyof MotionProps> & MotionProps
+    >(GridItem as any);
 export const MotionStack = motion<
     Omit<StackProps, keyof MotionProps> & MotionProps
     >(Stack as any);
