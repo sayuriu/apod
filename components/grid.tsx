@@ -1,86 +1,45 @@
-import { Box, Grid } from "@chakra-ui/react";
-import { Image, ImageEntry } from "@components/image";
-import { FC, useState } from "react";
-import { Nullable } from "@utils/common";
-import { AnimatePresence, LayoutGroup } from "framer-motion";
-import { ImageDetails } from "@components/imageDetails";
+import { ImageEntry } from "@components/image";
+import { FC, useRef, useState } from "react";
+import { Nullable, whichWider } from "@utils/common";
+import { AnimatePresence } from "framer-motion";
 import { MotionBox, MotionGrid } from "@components/motion";
+import { Image } from "@components/image";
 import { Forceful, SlowDown } from "@utils/anims";
 
 interface ImageGridProps {
-    images: Record<string, string>;
-    entries: Record<string, ImageEntry>;
-    selectedImage?: Nullable<string>;
-    onImageClick?: (key: string) => void;
+    images: Array<ImageEntry & { src: string }>;
+    selectedImage?: Nullable<number>;
+    onImageClick?: (index: number) => void;
+    inImageViewMode: boolean
 }
 
-export const ImageGrid: FC<ImageGridProps> = ({ selectedImage, images, entries, onImageClick }) => {
-    const [currentlyHovered, setCurrentlyHovered] = useState<Nullable<string>>(null);
+export const ImageGrid: FC<ImageGridProps> = ({ inImageViewMode, selectedImage, images, onImageClick }) => {
+    const transition = {
+        duration: 0.7,
+        ease: Forceful,
+    }
+    const [currentlyHovered, setCurrentlyHovered] = useState<Nullable<number>>(null);
     return <MotionGrid
-        gridTemplateColumns={"repeat(auto-fill, minmax(240px, 1fr))"}
-        style={{
-
-        }}
-
+        templateColumns={`repeat(auto-fill, minmax(20${whichWider() === 'width' ? 'vh' : 'vw'}, 1fr))`}
+        transition={transition}
+        layout
     >
-        {Object.entries(entries).map(([key, entry]) =>
-            <MotionBox
-                key={key}
-                className={"rel"}
-                style={{
-                    zIndex: 0,
-                }}
-                animate={{
-                    aspectRatio: 1,
-                }}
-                onClick={() => {
-                    onImageClick?.(key);
-                }}
-                bg={`url(${images[key]})`}
-                backgroundSize={"cover"}
-                initial={{
-                    filter: 'brightness(1)',
-                }}
-                transition={{
-                    duration: 0.7,
-                    ease: Forceful,
-                }}
+        {images.sort(() => -1).map((image, index) =>
+            <Image
+                key={image.src}
+                index={index}
+                src={image.src}
+                isSelected={selectedImage === index}
+                isHovered={selectedImage !== index && currentlyHovered === index}
                 onHoverStart={() => {
-                    setCurrentlyHovered(key);
+                    setCurrentlyHovered(index);
                 }}
                 onHoverEnd={() => {
                     setCurrentlyHovered(null);
                 }}
-            >
-                <AnimatePresence>
-                    <AnimatePresence>
-                        {selectedImage === key && <MotionBox
-                            className={"abs fh fw t0 l0 z2"}
-                            layoutId={"currentImage"}
-                            key={"currentImage"}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{
-                                duration: 1,
-                                ease: SlowDown,
-                            }}
-                            border={"4px solid white"}
-                        />}
-                        {selectedImage !== key && currentlyHovered === key && <MotionBox
-                            className={"abs fh fw t0 l0 z1"}
-                            layoutId={"currentHover"}
-                            key={"currentHover"}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{
-                                duration: 1,
-                                ease: SlowDown,
-                            }}
-                            border={"4px solid #f00"}
-                        />}
-                    </AnimatePresence>
-                </AnimatePresence>
-            </MotionBox>
+                onImageClick={onImageClick}
+                inImageViewMode={inImageViewMode}
+            />
         )}
     </MotionGrid>
 }

@@ -1,0 +1,18 @@
+.container {
+
+}
+
+.container::-webkit-scrollbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10;
+}
+
+.container::-webkit-scrollbar-thumb {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+    background: #f00;
+}

@@ -3,7 +3,7 @@ import { FC, useEffect, useRef, useState } from 'react'
 import { Box } from "@chakra-ui/react";
 import { AnimatePresence, LayoutGroup, MotionProps, useMotionValue } from "framer-motion";
 import { MotionGrid, MotionButton, MotionImage, MotionFlex, MotionBox } from '@components/motion';
-import { joinClasses, joinModuleClasses, Nullable, waitAsync } from "@utils/common";
+import { joinClasses, joinModuleClasses, Nullable, waitAsync, whichWider } from "@utils/common";
 import { AssetLoader } from '@utils/loader';
 import { Forceful } from "@utils/anims";
 
@@ -18,24 +18,26 @@ const transition = {
 }
 
 const Home: NextPage = () => {
-    const [images, setImages] = useState<Record<string, string>>({});
+    const [images, setImages] = useState<(ImageEntry & { src : string })[]>([]);
     const [progress, setProgress] = useState(0);
-    const [currentImage, setCurrentImage] = useState<Nullable<string>>(null);
+    const [currentImageIndex, setCurrentImageIndex] = useState<Nullable<number>>(null);
+    const [inImageViewMode, setInImageViewMode] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
-    const [gridWidth, setGridWidth] = useState(1);
-    const dependencies = Object.keys(imageEntries).map(
-        url => ({
-            url: `images/${url}`,
-        })
-    );
-    useEffect(() => {
-        const listener = () => {
-            if (containerRef.current) {
-                setGridWidth(window.getComputedStyle(containerRef.current).gridTemplateColumns.split(' ').length);
-            }
+    const dependencies = Object.keys(imageEntries).map(url => ({ url: `images/${url}` }));
+
+    const setImageIndex = (prevIndex: Nullable<number>, nextIndex: Nullable<number>) => {
+        if (nextIndex === null)
+        {
+            waitAsync(500).then(() => setInImageViewMode(false));
+            return null;
         }
-        listener();
-        window.addEventListener('resize', listener);
+        if (prevIndex !== null)
+            return (prevIndex + (nextIndex > prevIndex ? 1 : images.length - 1)) % images.length;
+        waitAsync(500).then(() => setInImageViewMode(true));
+        return nextIndex;
+    }
+
+    useEffect(() => {
         (async () => {
             const loader = new AssetLoader(dependencies, {
                 responseType: 'arraybuffer',
@@ -45,25 +47,22 @@ const Home: NextPage = () => {
             const downloaded = await loader.await();
             for (const { metadata: { mimeType }, url, resolved } of downloaded) {
                 if (mimeType === 'image/jpeg') {
-                    setImages(images => ({
-                        ...images,
-                        [url.split('/').pop()!]: URL.createObjectURL(new Blob([resolved as ArrayBuffer], { type: 'image/jpeg' }))
-                    }));
+                    setImages(images => [...images, {
+                        src: URL.createObjectURL(new Blob([resolved as ArrayBuffer], { type: 'image/jpeg' })),
+                        ...imageEntries[url.split('/').pop()! as keyof typeof imageEntries],
+                    }]);
                 }
             }
             await waitAsync(2000);
             setProgress(1.01);
         })();
-        return () => {
-            window.removeEventListener('resize', listener);
-        }
     }, []);
     return <MotionGrid
         h={"100vh"}
         w={"100vw"}
         className={"grid rel overflow-hidden"}
         animate={{
-            gridTemplateRows: currentImage ?
+            gridTemplateRows: currentImageIndex !== null ?
                 `clamp(calc(0px + 80vh), 80vh, calc(0px + 80vh)) 1fr` :
                 `clamp(calc(60px + 0vh), 5vh, calc(100px + 0vh)) 1fr`
         }}
@@ -111,31 +110,56 @@ const Home: NextPage = () => {
             color={"#f00"}
             bg={"#000"}
         >
-            <MotionBox
+            <MotionGrid
                 className={"fh fw rel overflow-hidden"}
+                templateColumns={"1fr 2fr"}
                 initial={{
                    background: "#000",
                 }}
                 animate={{
-                    background: currentImage ? "#000" : "#fff",
+                    background: currentImageIndex !== null ? "#000" : "#fff",
                 }}
                 transition={transition}
             >
                 <AnimatePresence>
-                    {currentImage && (({title, explanation, copyright, date}: ImageEntry) => <>
-                        <MotionBox bg={images[currentImage]}></MotionBox>
+                    {currentImageIndex !== null && (({title, explanation, copyright, date}: ImageEntry) => <>
+                        <MotionBox
+                            className={"fh fw"}
+                            bg={`url(${images[currentImageIndex].src})`}
+                            bgSize={"contain"}
+                            bgRepeat={"no-repeat"}
+                            bgPosition={"center"}
+                        ></MotionBox>
                         <MotionBox>
                             <MotionBox>{copyright ?? "Public domain"}</MotionBox>
                             <MotionBox as={"h3"}>{title}</MotionBox>
                             <MotionBox>{explanation}</MotionBox>
                         </MotionBox>
-                    </>)(imageEntries[currentImage as keyof typeof imageEntries])}
+                    </>)(images[currentImageIndex])}
                 </AnimatePresence>
-            </MotionBox>
+            </MotionGrid>
             <MotionFlex>
-                <MotionButton h={"100%"} borderRadius={0}>aaaaa</MotionButton>
-                <MotionButton h={"100%"} borderRadius={0}>aaaaa</MotionButton>
-                <MotionButton h={"100%"} onClick={() => setCurrentImage(null)} borderRadius={0}>Close</MotionButton>
+                <MotionButton
+                    h={"100%"}
+                    borderRadius={0}
+                    onClick={() => setCurrentImageIndex(prevIndex => setImageIndex(prevIndex, prevIndex !== null ? prevIndex - 1 : null))}
+                >
+                    Prev
+                </MotionButton>
+                <MotionButton
+                    h={"100%"}
+                    borderRadius={0}
+                    onClick={() => setCurrentImageIndex(prevIndex => setImageIndex(prevIndex, prevIndex !== null ? prevIndex + 1 : null))}
+                >
+                    Next
+                </MotionButton>
+                <MotionButton
+                    h={"100%"}
+                    borderRadius={0}
+                    onClick={() => setCurrentImageIndex(prevIndex => setImageIndex(prevIndex, null))}
+                >
+                    Close
+                </MotionButton>
             </MotionFlex>
         </MotionGrid>
         { progress >= 1 &&
@@ -147,11 +171,15 @@ const Home: NextPage = () => {
                     "overflow-none-x",
                     joinModuleClasses(styles)("container"),
                 )}
-                // initial={{ opacity: 0 }}
-                // animate={{ opacity: progress > 1 ? 1 : 0 }}
+                scrollBehavior={"smooth"}
                 transition={transition}
             >
-                <ImageGrid images={images} entries={imageEntries} selectedImage={currentImage} onImageClick={setCurrentImage}/>
+                <ImageGrid
+                    inImageViewMode={currentImageIndex !== null}
+                    images={images}
+                    selectedImage={currentImageIndex}
+                    onImageClick={setCurrentImageIndex}
+                />
             </MotionGrid>
         }
     </MotionGrid>
