@@ -33,13 +33,11 @@ export const Image: FC<ImageProps & Exclude<BoxProps, MotionProps> & MotionProps
     ...props
 }) => {
     const imageRef = useRef<HTMLDivElement>(null);
-    useEffect(() => {
-        if (isSelected && inImageViewMode && imageRef.current) {
-            imageRef.current.scrollIntoView({
-                behavior: 'smooth',
-            });
-        }
-    })
+    if (isSelected && inImageViewMode && imageRef.current) {
+        imageRef.current.scrollIntoView({
+            behavior: 'smooth',
+        });
+    }
     return <MotionBox
         ref={imageRef}
         className={"rel"}

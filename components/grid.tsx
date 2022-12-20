@@ -1,5 +1,5 @@
 import { ImageEntry } from "@components/image";
-import { FC, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { Nullable, whichWider } from "@utils/common";
 import { AnimatePresence } from "framer-motion";
 import { MotionBox, MotionGrid } from "@components/motion";
@@ -14,13 +14,17 @@ interface ImageGridProps {
 }
 
 export const ImageGrid: FC<ImageGridProps> = ({ inImageViewMode, selectedImage, images, onImageClick }) => {
+    const [viewMode, setViewMode] = useState<'vh' | 'vw'>('vw');
+    useEffect(() => {
+        setViewMode(whichWider()  === 'width' ? 'vh' : 'vw');
+    });
     const transition = {
         duration: 0.7,
         ease: Forceful,
     }
     const [currentlyHovered, setCurrentlyHovered] = useState<Nullable<number>>(null);
     return <MotionGrid
-        templateColumns={`repeat(auto-fill, minmax(20${whichWider() === 'width' ? 'vh' : 'vw'}, 1fr))`}
+        templateColumns={`repeat(auto-fill, minmax(20${viewMode}, 1fr))`}
         transition={transition}
         layout
     >

@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { FC, useEffect, useRef, useState } from 'react'
+import { FC, useEffect, useMemo, useRef, useState } from 'react'
 import { Box } from "@chakra-ui/react";
 import { AnimatePresence, LayoutGroup, MotionProps, useMotionValue } from "framer-motion";
 import { MotionGrid, MotionButton, MotionImage, MotionFlex, MotionBox } from '@components/motion';
@@ -21,11 +21,14 @@ const Home: NextPage = () => {
     const [images, setImages] = useState<(ImageEntry & { src : string })[]>([]);
     const [progress, setProgress] = useState(0);
     const [currentImageIndex, setCurrentImageIndex] = useState<Nullable<number>>(null);
+    const [prevImageIndex, setPrevImageIndex] = useState<Nullable<number>>(null);
     const [inImageViewMode, setInImageViewMode] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
     const dependencies = Object.keys(imageEntries).map(url => ({ url: `images/${url}` }));
 
+
     const setImageIndex = (prevIndex: Nullable<number>, nextIndex: Nullable<number>) => {
+        setPrevImageIndex(prevIndex);
         if (nextIndex === null)
         {
             waitAsync(500).then(() => setInImageViewMode(false));
@@ -36,6 +39,12 @@ const Home: NextPage = () => {
         waitAsync(500).then(() => setInImageViewMode(true));
         return nextIndex;
     }
+
+    const fromWhatDirection = useMemo(() => {
+        if (prevImageIndex === null || currentImageIndex === null)
+            return 'right';
+        return prevImageIndex > currentImageIndex ? 'left' : 'right';
+    }, [prevImageIndex, currentImageIndex]);
 
     useEffect(() => {
         (async () => {
@@ -70,7 +79,7 @@ const Home: NextPage = () => {
         templateColumns={"1fr"}
     >
         <AnimatePresence>
-            {progress <= 1 && <>
+            {/* progress <= 1 */ false && <>
                 <MotionFlex key={"load-top"}
                     className={"abs l0 z1 fw flex flex-col-rev"}
                     initial={{
@@ -112,7 +121,8 @@ const Home: NextPage = () => {
         >
             <MotionGrid
                 className={"fh fw rel overflow-hidden"}
-                templateColumns={"1fr 2fr"}
+                templateColumns={"1.3fr 2fr"}
+                gap="3"
                 initial={{
                    background: "#000",
                 }}
@@ -121,22 +131,40 @@ const Home: NextPage = () => {
                 }}
                 transition={transition}
             >
-                <AnimatePresence>
-                    {currentImageIndex !== null && (({title, explanation, copyright, date}: ImageEntry) => <>
-                        <MotionBox
-                            className={"fh fw"}
-                            bg={`url(${images[currentImageIndex].src})`}
-                            bgSize={"contain"}
-                            bgRepeat={"no-repeat"}
-                            bgPosition={"center"}
-                        ></MotionBox>
-                        <MotionBox>
-                            <MotionBox>{copyright ?? "Public domain"}</MotionBox>
-                            <MotionBox as={"h3"}>{title}</MotionBox>
-                            <MotionBox>{explanation}</MotionBox>
-                        </MotionBox>
-                    </>)(images[currentImageIndex])}
-                </AnimatePresence>
+                {currentImageIndex !== null && (({title, explanation, copyright, date}: ImageEntry) => <>
+                    <Box
+                        className={"fh fw"}
+                    >
+                        <AnimatePresence>
+                            <MotionBox
+                                key={`viewMode-${images[currentImageIndex].src}`}
+                                bg={`url(${images[currentImageIndex].src})`}
+                                initial={{
+                                    opacity: 0,
+                                    x: fromWhatDirection === 'right' ? 100 : -100,
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    x: 0,
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    x: fromWhatDirection === 'right' ? -100 : 100,
+                                }}
+                                transition={transition}
+                                className={"fh fw"}
+                                bgSize={"contain"}
+                                bgRepeat={"no-repeat"}
+                                bgPosition={"center"}
+                            />
+                        </AnimatePresence>
+                    </Box>
+                    <MotionBox>
+                        <MotionBox>{copyright ?? "Public domain"}</MotionBox>
+                        <MotionBox fontSize="40px" fontWeight="bold">{title}</MotionBox>
+                        <MotionBox>{explanation}</MotionBox>
+                    </MotionBox>
+                </>)(images[currentImageIndex])}
             </MotionGrid>
             <MotionFlex>
                 <MotionButton
@@ -162,7 +190,7 @@ const Home: NextPage = () => {
                 </MotionButton>
             </MotionFlex>
         </MotionGrid>
-        { progress >= 1 &&
+        { /* progress >= 1 */ true &&
             <MotionGrid
                 ref={containerRef}
                 layout
