@@ -44,6 +44,10 @@ export const Image: FC<ImageProps & Exclude<BoxProps, MotionProps> & MotionProps
         style={{
             zIndex: 0,
         }}
+        initial={{
+            filter: 'brightness(1)',
+            aspectRatio: 2 / 2,
+        }}
         animate={{
             aspectRatio: 2 / 2,
         }}
@@ -54,9 +58,6 @@ export const Image: FC<ImageProps & Exclude<BoxProps, MotionProps> & MotionProps
         }}
         bg={`url(${src})`}
         backgroundSize={"cover"}
-        initial={{
-            filter: 'brightness(1)',
-        }}
         transition={transition}
 
         {...props}

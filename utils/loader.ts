@@ -7,7 +7,9 @@ export interface RequestData {
     success: boolean;
     progress: number;
     resolved: Nullable<unknown>;
-    metadata: ExcludeProps<RequestOptions, Function>
+    metadata: ExcludeProps<RequestOptions, Function> & {
+        xhr?: XMLHttpRequest;
+    }
 }
 
 interface RequestOptions {
@@ -65,6 +67,7 @@ export class AssetLoader {
             this.requestFinished();
         };
         xhr.send();
+        request.metadata.xhr = xhr;
     }
     private requestFinished() {
         if (this.totalProgress === 1)
@@ -84,11 +87,19 @@ export class AssetLoader {
         }, 300);
     }
 
-    await() {
+    download() {
         return new Promise<RequestData[]>((resolve) => {
             if (this.totalProgress === 1)
                 resolve(this.requests);
             this.resolve = resolve;
         });
+    }
+    destroy() {
+        for (const request of this.requests) {
+            request.resolved = null;
+            request.metadata.xhr?.abort();
+        }
+        this.resolve = undefined;
+        this.onProgressUpdate = undefined;
     }
 }

@@ -17,7 +17,7 @@ export const ImageGrid: FC<ImageGridProps> = ({ inImageViewMode, selectedImage, 
     const [viewMode, setViewMode] = useState<'vh' | 'vw'>('vw');
     useEffect(() => {
         setViewMode(whichWider()  === 'width' ? 'vh' : 'vw');
-    });
+    }, []);
     const transition = {
         duration: 0.7,
         ease: Forceful,
