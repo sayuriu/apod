@@ -7,12 +7,12 @@ import { Forceful } from "@utils/anims";
 import { AnimatePresence, LayoutGroup, MotionProps, useMotionValue } from "framer-motion";
 import { MotionGrid, MotionButton, MotionImage, MotionFlex, MotionBox } from '@components/motion';
 import { joinClasses, joinModuleClasses, Nullable, waitAsync, whichWider } from "@utils/common";
-import { ImageGrid } from "@components/grid";
-import { ImageEntry } from "@components/image";
+import { ImageGrid } from "@components/ImageGrid";
+import { ImageEntry } from "@components/Image";
 
 import styles from '@styles/Home.module.scss';
 import imageEntries from "public/data.json";
-import { AnimatedText } from "@components/Text";
+import { AnimatedText } from "@components/AnimatedText";
 
 const transition = {
     ease: Forceful,

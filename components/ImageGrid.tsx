@@ -1,9 +1,9 @@
-import { ImageEntry } from "@components/image";
+import { ImageEntry } from "@components/Image";
 import { FC, useEffect, useRef, useState } from "react";
 import { Nullable, whichWider } from "@utils/common";
 import { AnimatePresence } from "framer-motion";
 import { MotionBox, MotionGrid } from "@components/motion";
-import { Image } from "@components/image";
+import { Image } from "@components/Image";
 import { Forceful, SlowDown } from "@utils/anims";
 
 interface ImageGridProps {

@@ -1,5 +1,5 @@
 import { MotionGrid } from "@components/motion";
-import { ImageEntry } from "@components/image";
+import { ImageEntry } from "@components/Image";
 
 interface ImageDetailsProps {
     src: string;
