@@ -1,12 +1,12 @@
 import type { NextPage } from 'next';
-import { Component, FC, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Box } from "@chakra-ui/react";
 import { AssetLoader } from '@utils/loader';
 import { Forceful } from "@utils/anims";
 
-import { AnimatePresence, LayoutGroup, MotionProps, useMotionValue } from "framer-motion";
-import { MotionGrid, MotionButton, MotionImage, MotionFlex, MotionBox } from '@components/motion';
-import { joinClasses, joinModuleClasses, Nullable, waitAsync, whichWider } from "@utils/common";
+import { AnimatePresence } from "framer-motion";
+import { MotionGrid, MotionButton, MotionFlex, MotionBox } from '@components/motion';
+import { joinClasses, joinModuleClasses, Nullable, waitAsync } from "@utils/common";
 import { ImageGrid } from "@components/ImageGrid";
 import { ImageEntry } from "@components/Image";
 
@@ -40,12 +40,6 @@ const Home: NextPage = () => {
         waitAsync(500).then(() => setInImageViewMode(true));
         return nextIndex;
     }
-
-    const fromWhatDirection = () => {
-        if (prevImageIndex.current === null || currentImageIndex === null)
-            return 'right';
-        return prevImageIndex.current > currentImageIndex ? 'left' : 'right';
-    };
 
     useEffect(() => {
         let loader: Nullable<AssetLoader> = null;
@@ -221,6 +215,7 @@ const Home: NextPage = () => {
                 className={joinClasses(
                     "rel fw z0",
                     "overflow-none-x",
+                    inImageViewMode ? "overflow-none-y" : "",
                     joinModuleClasses(styles)("container"),
                 )}
                 scrollBehavior={"smooth"}

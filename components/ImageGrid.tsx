@@ -25,10 +25,12 @@ export const ImageGrid: FC<ImageGridProps> = ({ inImageViewMode, selectedImage, 
     const [currentlyHovered, setCurrentlyHovered] = useState<Nullable<number>>(null);
     return <MotionGrid
         templateColumns={`repeat(auto-fill, minmax(20${viewMode}, 1fr))`}
+        gridAutoFlow={"dense"}
         transition={transition}
         layout
     >
         {images.sort(() => -1).map((image, index) =>
+            // eslint-disable-next-line jsx-a11y/alt-text
             <Image
                 key={image.src}
                 index={index}

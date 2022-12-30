@@ -33,11 +33,20 @@ export const Image: FC<ImageProps & Exclude<BoxProps, MotionProps> & MotionProps
     ...props
 }) => {
     const imageRef = useRef<HTMLDivElement>(null);
+    const imageSpanRatio = useRef<[number, number]>([1, 1]);
     if (isSelected && inImageViewMode && imageRef.current) {
         imageRef.current.scrollIntoView({
             behavior: 'smooth',
         });
     }
+    useEffect(() => {
+        const image = document.createElement('img');
+        image.src = src;
+        image.onload = () => {
+            const minDim = Math.min(image.width, image.height);
+            imageSpanRatio.current = [image.naturalWidth, image.naturalHeight].map(x => Math.ceil(x / minDim)) as [number, number];
+        }
+    }, [])
     return <MotionBox
         ref={imageRef}
         className={"rel"}
@@ -46,10 +55,14 @@ export const Image: FC<ImageProps & Exclude<BoxProps, MotionProps> & MotionProps
         }}
         initial={{
             filter: 'brightness(1)',
-            aspectRatio: 2 / 2,
+            aspectRatio: 1,
+            gridArea: "span 1 / span 1"
         }}
         animate={{
-            aspectRatio: 2 / 2,
+            aspectRatio: 1,// inImageViewMode ? 1 : imageSpanRatio.current.reduce((a, b) => a / b),
+            gridArea: // inImageViewMode ?
+                    "span 1 / span 1" //:
+                    //`span ${imageSpanRatio.current[0]} / span ${imageSpanRatio.current[1]}`,
         }}
         onClick={() => {
             if (imageRef.current)
@@ -58,6 +71,7 @@ export const Image: FC<ImageProps & Exclude<BoxProps, MotionProps> & MotionProps
         }}
         bg={`url(${src})`}
         backgroundSize={"cover"}
+        backgroundPosition={"center"}
         transition={transition}
 
         {...props}
